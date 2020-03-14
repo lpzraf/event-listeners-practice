@@ -11,16 +11,17 @@
         <input class="input-to-change" placeholder="Type here!"/> <button>Click</button>
 
         <script>
-                const ele = document.querySelector('.p-tag')
-                const inputEle = document.querySelector('.input-to-change')
+            const ele = document.querySelector('.p-tag')
+            const input = document.querySelector('.input-to-change')
                     
-                inputEle.addEventListener('keyup', function() {
-                        ele.innerHTML = inputEle.value
-                    })
-            </script>
+            input.addEventListener('keyup', function() {
+                ele.innerHTML = input.value
+            })
+        </script>
+        
         <h1>====================================</h1>
+        
         <h1>Event Listeners: Click</h1>
-        <p>Lorem ipsum text.</p>
         <input type='text' class="message" placeholder="Type here!" /> 
         <input class='click-input' type="submit" value='Click'/>
         <script>
@@ -31,7 +32,9 @@
                 alert( message );
             })
         </script>
+        
         <h1>====================================</h1>
+        
         <h1>Event Listeners: Event Delegation</h1>
         <div class='container'>
             <button>1</button>
@@ -41,7 +44,7 @@
         <script>
             document.querySelector('.container').addEventListener('click', function(e) {
             if (e.target.tagName === 'BUTTON') {
-                alert(`You have clicked button number  ${e.target.innerHTML}`)
+                alert(`You have clicked button number ${e.target.innerHTML}`)
                 }
                 e.stopPropagation();
             })
