@@ -20,5 +20,20 @@
             ele.innerHTML = inputEle.value
         })
         </script>
+        
+        <h1>Event Listeners: Click</h1>
+        <p>Lorem ipsum text.</p>
+        
+        <input type='text' class="message" placeholder="Type here!" /> 
+        <input class='click-input' type="submit" value='Click'/>
+        
+        <script>
+            const inputTag = document.querySelector('.click-input')
+            
+            inputTag.addEventListener('click', function() {
+                let message = document.querySelector('.message').value;
+                alert( message );
+            })
+        </script>
     </body>
 </html>
