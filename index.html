@@ -1,38 +1,49 @@
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
     </head>
     <body>
         <h1>Event Listeners: Keyup</h1>
         <p class="p-tag">Lorem ipsum text.</p>
         <input class="input-to-change" placeholder="Type here!"/> <button>Click</button>
-        
+
         <script>
-        const ele = document.querySelector('.p-tag')
-        const inputEle = document.querySelector('.input-to-change')
-        
-        inputEle.addEventListener('keyup', function() {
-            ele.innerHTML = inputEle.value
-        })
-        </script>
-        
+                const ele = document.querySelector('.p-tag')
+                const inputEle = document.querySelector('.input-to-change')
+                    
+                inputEle.addEventListener('keyup', function() {
+                        ele.innerHTML = inputEle.value
+                    })
+            </script>
+        <h1>====================================</h1>
         <h1>Event Listeners: Click</h1>
         <p>Lorem ipsum text.</p>
-        
         <input type='text' class="message" placeholder="Type here!" /> 
         <input class='click-input' type="submit" value='Click'/>
-        
         <script>
             const inputTag = document.querySelector('.click-input')
             
             inputTag.addEventListener('click', function() {
                 let message = document.querySelector('.message').value;
                 alert( message );
+            })
+        </script>
+        <h1>====================================</h1>
+        <h1>Event Listeners: Event Delegation</h1>
+        <div class='container'>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+        </div>
+        <script>
+            document.querySelector('.container').addEventListener('click', function(e) {
+            if (e.target.tagName === 'BUTTON') {
+                alert(`You have clicked button number  ${e.target.innerHTML}`)
+                }
+                e.stopPropagation();
             })
         </script>
     </body>
